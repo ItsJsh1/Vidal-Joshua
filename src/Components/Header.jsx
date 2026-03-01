@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../context/ThemeContext";
 import { profile, certifications } from "../context/data/portfolioData";
-import { Moon, Sun, MapPin, Laptop, BadgeCheck, Mail, Award, Download, GraduationCap, ExternalLink } from "lucide-react";
+import { Moon, Sun, MapPin, Laptop, BadgeCheck, Mail, Award, Download, ExternalLink } from "lucide-react";
 
 export default function Header() {
   const { isDark, toggleDark } = useTheme();
