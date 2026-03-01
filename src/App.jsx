@@ -25,9 +25,9 @@ export default function App() {
         </div>
 
         {/* Two-column layout — matches your wireframe exactly */}
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* Left column — takes up more space */}
-          <div className="flex flex-col gap-4 flex-[1.4] transition-all duration-300 hover:backdrop-blur-sm">
+          <div className="flex flex-col gap-4 md:flex-[1.4] transition-all duration-300 hover:backdrop-blur-sm">
             <div className="animate-fade-in-up delay-2">
               <AboutMe />
             </div>
@@ -40,7 +40,7 @@ export default function App() {
           </div>
 
           {/* Right column */}
-          <div className="flex flex-col gap-4 flex-1 transition-all duration-300 hover:backdrop-blur-sm">
+          <div className="flex flex-col gap-4 md:flex-1 transition-all duration-300 hover:backdrop-blur-sm">
             <div className="animate-fade-in-up delay-3">
               <Experiences />
             </div>

@@ -193,7 +193,7 @@ export default function Projects() {
           grid grid-cols-2 = two columns
           gap-3 = space between grid items
         */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 xs:grid-cols-2 gap-3">
           {projects.slice(0, 4).map((project, index) => (
             <div
               key={index}

@@ -30,12 +30,12 @@ export default function CarouselGallery() {
         </button>
 
         {/* Images — shows a scrollable strip, highlights current */}
-        <div className="flex gap-2 overflow-hidden flex-1">
+        <div className="flex gap-2 overflow-x-auto flex-1 scrollbar-hide">
           {galleryImages.map((img, index) => (
             <div
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`flex-shrink-0 w-28 h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
+              className={`flex-shrink-0 w-20 h-14 sm:w-28 sm:h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
                 index === currentIndex ? "ring-2 ring-blue-500" : "opacity-60"
               } ${isDark ? "bg-gray-700" : "bg-gray-400"}`}
             >
