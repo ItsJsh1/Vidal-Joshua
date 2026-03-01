@@ -15,10 +15,24 @@ import lms1 from "../../asset/lms1.jpeg";
 import lms2 from "../../asset/lm2.jpeg";
 import lms3 from "../../asset/lms3.jpeg";
 
+// Project images - PMS
+import pms1 from "../../asset/pms1.jpeg";
+
 // Project images - XenoClash
 import xenoclash1 from "../../asset/XenoClash-Invasion.jpeg";
 import xenoclash2 from "../../asset/XenoClash-Invasion2.jpeg";
 import xenoclash3 from "../../asset/XenoClash-Invasion3.jpeg";
+
+// Project images - MPP
+import portfolio1 from "../../asset/portfolio1.jpeg";
+import portfolio2 from "../../asset/portfolio2.jpeg";
+
+// Project images - Figma
+import figma1 from "../../asset/figma1.jpeg";
+import figma2 from "../../asset/figma2.jpeg";
+import figma3 from "../../asset/figma3.jpeg";
+import figma4 from "../../asset/figma4.jpeg";
+import figma5 from "../../asset/figma5.jpeg";
 
 // Profile image
 import profilePic from "../../asset/profile.jpg";
@@ -38,9 +52,12 @@ export const profile = {
 };
 
 export const certifications = [
-  { name: "AWS Certified Developer", issuer: "Amazon", date: "2024", link: "#" },
-  { name: "React Professional", issuer: "Meta", date: "2023", link: "#" },
+  { name: "GIT IT TOGETHER Certificate", issuer: "Polytechnic University of the Philippines - Taguig Campus", date: "March 8, 2025", link: "#" },
+  { name: "LAUNCHPAD Certificate", issuer: "Polytechnic University of the Philippines - Taguig Campus", date: "March 3, 2025", link: "#" },
+  { name: "Glass-Is-Kool Certificate", issuer: "Polytechnic University of the Philippines - Taguig Campus", date: "November 20, 2022", link: "#" },
 ];
+
+
 
 export const experiences = [
   {
@@ -135,39 +152,39 @@ export const accomplishments = [
 export const projects = [
   { 
     title: "Membership Information Management System", 
-    description: "A web app that does X.", 
+    description: "A Membership Information Management System for Radio Engineering Circle Inc. is a digital platform designed to manage and organize member records, track membership status, and streamline administrative processes for the organization.", 
     link: "#", 
     images: [mims2, mims3, mims4]
   },
   { 
     title: "Library Management System", 
-    description: "A mobile app that does Y.", 
+    description: "A Library Management System is a digital system that helps manage books, track borrowing and returns, and organize library records efficiently for both librarians and users.", 
     link: "https://github.com/ItsJsh1/Library-Management-System_LMS.git", 
     images: [lms1, lms2, lms3]
   },
   { 
     title: "XenoClash: Invasion", 
-    description: "An API that does Z.", 
+    description: "FPS Game Developed using GODOT.", 
     link: "https://github.com/ItsJsh1/XenoClash-Invasion-Game-Development.git", 
     images: [xenoclash2, xenoclash3, xenoclash1]
   },
   { 
     title: "Parking Management System", 
-    description: "A dashboard for W.", 
+    description: "A Parking Management System is a digital solution that monitors and manages parking spaces, tracks vehicle entry and exit, and helps organize parking efficiently while reducing congestion.", 
     link: "#", 
-    images: []
+    images: [pms1]
   },
   { 
-    title: "Figma Project", 
-    description: "A dashboard for W.", 
-    link: "#", 
-    images: []
+    title: "NBI UI/UX Design", 
+    description: "A project to improved the National Bureau of Investigation's website and mobile app user interface and experience.", 
+    link: "https://www.figma.com/proto/HdhCDZZkRrkgdMERa2tBG6/NBI---HCI-Design-Team?node-id=1-2&p=f&viewport=319%2C286%2C0.03&t=Z88eDi4vKfNmiJ89-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2&page-id=0%3A1", 
+    images: [figma1, figma2, figma3, figma4, figma5]
   },
   { 
-    title: "My Portfolio Project", 
-    description: "A dashboard for W.", 
-    link: "#", 
-    images: []
+    title: "My OJT Portfolio Project", 
+    description: "School required project for OJT showcasing my skills and accomplishments during my internship.", 
+    link: "https://github.com/ItsJsh1/OJT-Portfolio.git", 
+    images: [portfolio1, portfolio2]
   },
 ];
 
