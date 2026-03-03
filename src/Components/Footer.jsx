@@ -4,8 +4,10 @@ import { profile, socialMedia, contactInfo } from "../context/data/portfolioData
 export default function Footer() {
   const { isDark } = useTheme();
   const cardClass = `rounded-xl p-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)] transition-all duration-300 ${isDark ? "bg-gray-800" : "bg-white"}`;
+  const currentYear = new Date().getFullYear();
 
   return (
+  <>
     <div className="flex flex-col md:flex-row gap-4">
       
       {/* YT Video Resume */}
@@ -88,5 +90,13 @@ export default function Footer() {
       </div>
 
     </div>
+
+    {/* Copyright Footer */}
+    <div className={`mt-8 pt-6 border-t ${isDark ? "border-gray-700" : "border-gray-200"}`}>
+      <p className="text-center text-sm opacity-70">
+        © {currentYear} {profile.name}. All rights reserved.
+      </p>
+    </div>
+  </>
   );
 }

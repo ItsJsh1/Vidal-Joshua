@@ -69,7 +69,7 @@ export const experiences = [
   },
 
   {
-    title: "FullStack Developer",
+    title: "Full Stack Developer",
     company: "Radio Engineering Circle Inc. (RECInc.)",
     date: "2025 - 2026",
     description: "What you did here.",

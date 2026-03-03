@@ -21,8 +21,12 @@ export default function DriveAttachments() {
   const { isDark } = useTheme();
 
   return (
-    // Responsive grid: 2 cols on mobile, 3 on sm, 4 on md, 5 on lg
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    <div>
+      {/* Section Title */}
+      <h2 className="text-2xl font-bold mb-4">PUP-T On the Job Training Requirements</h2>
+      
+      {/* Responsive grid: 2 cols on mobile, 3 on sm, 4 on md, 5 on lg */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       {driveAttachments.map((file, index) => {
         const thumbnail = getGDriveThumbnail(file.link);
         
@@ -32,7 +36,7 @@ export default function DriveAttachments() {
             href={file.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`rounded-xl overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)] flex flex-col transition-all duration-300 ${
+            className={`group rounded-xl overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)] flex flex-col transition-all duration-300 border-b-4 border-transparent hover:border-blue-500 ${
               isDark ? "bg-gray-800" : "bg-white"
             }`}
           >
@@ -67,6 +71,7 @@ export default function DriveAttachments() {
           </a>
         );
       })}
+      </div>
     </div>
   );
 }
