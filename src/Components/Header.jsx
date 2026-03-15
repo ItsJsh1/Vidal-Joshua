@@ -146,8 +146,8 @@ export default function Header() {
               <p className="text-xs sm:text-sm opacity-70">{profile.school}</p>
             </div>
 
-            {/* Action buttons */}
-            <div className="flex flex-wrap justify-center sm:justify-start gap-2 mt-3">
+            {/* Action buttons + total hours */}
+            <div className="mt-3 w-full flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-2">
               {/* Email Me button */}
               <a
                 href={`mailto:${profile.email}`}
@@ -168,16 +168,23 @@ export default function Header() {
 
               {/* Download Accomplishment Report button */}
               <a 
-                href="/weekly_report.pdf"
+                href="https://docs.google.com/document/d/1YzfGcoevMv27C-_J3wGTapfyF0ez67j1/edit?usp=sharing&ouid=112144033677438935308&rtpof=true&sd=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Joshua_Vidal_Weekly_Report.pdf"
                 className="relative overflow-hidden flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition"
               >
                 <span className="absolute inset-0 animate-shine"></span>
                 <Download size={14} className="relative" />
                 <span className="relative">Download Report</span>
               </a>
+
+              <div
+                className={`whitespace-nowrap ml-0 sm:ml-auto text-[10px] sm:text-xs font-semibold px-2 py-1 rounded-md border ${
+                  isDark ? "bg-gray-700 border-gray-600 text-gray-100" : "bg-gray-100 border-gray-200 text-gray-700"
+                }`}
+              >
+                Hours: {profile.totalHours}
+              </div>
             </div>
           </div>
         </div>

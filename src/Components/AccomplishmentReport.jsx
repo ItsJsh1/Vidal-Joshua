@@ -47,7 +47,21 @@ export default function AccomplishmentReport() {
         >
           {/* Modal Header */}
           <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-500/30 flex-shrink-0">
-            <h2 className="text-lg sm:text-xl font-bold">All Accomplishments</h2>
+            <div className="flex items-center gap-2 min-w-0">
+              <h2 className="text-lg sm:text-xl font-bold truncate">All Accomplishments</h2>
+              <a
+                href="https://docs.google.com/document/d/1YzfGcoevMv27C-_J3wGTapfyF0ez67j1/edit?usp=sharing&ouid=112144033677438935308&rtpof=true&sd=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex-shrink-0 text-[10px] sm:text-xs px-2.5 py-1 rounded-full font-medium transition-all duration-200 ${
+                  isDark
+                    ? "bg-blue-600/20 text-blue-400 hover:bg-blue-600/30"
+                    : "bg-blue-100 text-blue-600 hover:bg-blue-200"
+                }`}
+              >
+                Download
+              </a>
+            </div>
             <button 
               onClick={closeModal}
               className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${isDark ? "hover:bg-gray-700" : "hover:bg-gray-200"}`}

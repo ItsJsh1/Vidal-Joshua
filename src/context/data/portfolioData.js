@@ -43,10 +43,11 @@ import schoolLogo from "../../asset/school.jpeg";
 export const profile = {
   name: "Joshua Florante Vidal",
   location: "Taguig, Metro Manila Philippines",
-  roles: ["Software Developer", "FullStack Developer", "IT Support"],
+  roles: ["Software Developer", "Full Stack Developer", "IT Support"],
   school: "Polytechnic University of the Philippines - Taguig Campus",
   schoolLogo: schoolLogo,
   email: "joshuavidalpupstudent@gmail.com",
+  totalHours: "152",
   profilePic: profilePic,
   ytVideoId: "your-youtube-video-id",
 };
@@ -94,6 +95,56 @@ export const experiences = [
 ];
 
 export const accomplishments = [
+  {
+    activity: "Web Development",
+    date: "Day // 20 | 8:00 AM - 5:00 PM",
+    description: "Assisted in planning the development of the Equipment Inventory Management System for DTI and began coding the basic system architecture and layout, ensuring a structured foundation for the project’s design and functionality.",
+  },
+  {
+    activity: "Networking and Technical Support",
+    date: "Day // 19 | 8:00 AM - 5:00 PM",
+    description: "Assisted employees with DTI Enterprise Wi-Fi connections, set up and configured printers, maintained printer functionality, and helped domain a MacBook by adding a user account and installing necessary applications.",
+  },
+  {
+    activity: "Networking and Technical Support",
+    date: "Day // 18 | 8:00 AM - 5:00 PM",
+    description: "Assisted in setting up equipment for the MSME event, connected an HP printer, and helped employees connect their devices to the DTI Enterprise Wi-Fi network.",
+  },
+  {
+    activity: "Networking and Hardware Support",
+    date: "Day // 17 | 8:00 AM - 5:00 PM",
+    description: "On my 17th day of OJT, I tested keyboards for functionality, assisted in setting up Canon and HP printers, connected devices to the DTI Enterprise Wi-Fi network, and helped assemble laptop parts during a hardware check.",
+  },
+  {
+    activity: "Networking and IT Support",
+    date: "Day // 16 | 8:00 AM - 5:00 PM",
+    description: "Assisted employees with DTI Enterprise Wi-Fi connection, password resets, printer setup, logbook documentation, laptop reformatting, and cleaning and organizing the Tech Room.",
+  },
+  {
+    activity: "Networking Support and IT Maintenance",
+    date: "Day // 15 | 8:00 AM - 5:00 PM",
+    description: "Helped organize printer test papers and clean the printing area, assisted with enterprise helpdesk troubleshooting for Windows devices including DTI Enterprise Wi-Fi issues, and helped set up a conference room with necessary equipment for meetings and presentations.",
+  },
+  {
+    activity: "Networking Support",
+    date: "Day // 14 | 8:00 AM - 5:00 PM",
+    description: "On my 14th day of OJT, I assisted employees with Windows device troubleshooting, resolved DTI Enterprise Wi-Fi connectivity issues, and installed or configured printer drivers, including connecting three printers to a single laptop.",
+  },
+  {
+    activity: "Networking Support",
+    date: "Day // 13 | 8:00 AM - 5:00 PM",
+    description: "Assisted employees with Windows device troubleshooting, resolving DTI Enterprise Wi-Fi connectivity issues and fixing printer connectivity by installing and configuring drivers for HP, Epson, Canon, and Sharp printers.",
+  },
+  {
+    activity: "Networking Support",
+    date: "Day // 12 | 8:00 AM - 5:00 PM",
+    description: "Assisted employees with Windows device troubleshooting, resolving DTI Enterprise Wi-Fi connectivity issues and fixing printer connectivity by installing and configuring drivers.",
+  },
+  {
+    activity: "Networking Support",
+    date: "Day // 11 | 8:00 AM - 5:00 PM",
+    description: "Assisted in organizing server room equipment, evaluating laptops with pending check-ups, and resolving enterprise helpdesk concerns by troubleshooting DTI Enterprise Wi-Fi connectivity issues on Windows devices.",
+  },
   {
     activity: "Networking Support",
     date: "Day // 10 | 8:00 AM - 5:00 PM",
@@ -219,14 +270,19 @@ export const techStacks = {
 export const driveAttachments = [
   { label: "My Resume", link: "https://drive.google.com/file/d/1tqPmc86Tw6Q509AEfmX-a38wQlM87g68/view?usp=sharing" },
   { label: "Curriculum Vitae", link: "https://drive.google.com/file/d/1xcP9inOM39ChD4MOhu5v-3BP4hNbRtKS/view?usp=sharing" },
+  { label: "Cover Letter", link: "https://drive.google.com/file/d/1IqQMh50zqFZ11VaHvFo0njcMsUJzqRti/view?usp=sharing" },
   { label: "Acceptance Letter", link: "https://drive.google.com/file/d/1iqEZMphqBg_aRK7mluV2CNrQV754KYgP/view?usp=sharing" },
   { label: "Recommendation Letter", link: "https://drive.google.com/file/d/19yZKZO5uc6BCpizwiSg7zDj9Xfiu4295/view?usp=sharing" },
   { label: "Memorandum of Agreement", link: "https://drive.google.com/file/d/1QveZczYXsn2grriDw1zMtEUK_yhTWCKn/view?usp=sharing" },
   { label: "Information Sheet of Training Partner", link: "https://drive.google.com/file/d/1VgaQgFjEHQ17h9sRu-qg_WZnFnWnvtjG/view?usp=sharing" },
   { label: "Student Information Sheet", link: "https://drive.google.com/file/d/1UBbJbKTakIMKkjwQcmp2U4uV2rxgEvwy/view?usp=sharing" },
   { label: "Good Moral", link: "https://drive.google.com/file/d/1l7t2_fgQHsLN9tXWJ0qP4XhEHhFPhNjj/view?usp=sharing" },
-  { label: "Accomplishment Report", link: "https://drive.google.com/file/d/1XDtdDRMPBWCq0Hlrz4RZ8r3gxkc_Hsbf/view?usp=sharing" },
+  { label: "Accomplishment Report", link: "https://docs.google.com/document/d/1YzfGcoevMv27C-_J3wGTapfyF0ez67j1/edit?usp=sharing&ouid=112144033677438935308&rtpof=true&sd=true" },
   { label: "Application Report", link: "https://drive.google.com/file/d/1B2kJeINymhewoxAiS5i3SFUfK1yDuCzv/view?usp=sharing" },
+  { label: "Medical Clearance", link: "https://drive.google.com/file/d/1r8ve-iGAcZ9L82ssFa7nGMglyhuICYCz/view?usp=sharing" },
+  { label: "Consent Form", link: "https://drive.google.com/file/d/1aMIHbPGKMvMtbVRf3ICEsELl1uVMZiF0/view?usp=sharing" },
+  { label: "Certificate Of Registration", link: "https://drive.google.com/file/d/1aMIHbPGKMvMtbVRf3ICEsELl1uVMZiF0/view?usp=sharing" },
+  { label: "Daily Time Records", link: "https://drive.google.com/file/d/1i3iMjgSEa5CAVIDRXV0SJzJf02qxBHBL/view?usp=sharing" },
 ];
 
 export const socialMedia = [
