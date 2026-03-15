@@ -281,7 +281,7 @@ export const driveAttachments = [
   { label: "Application Report", link: "https://drive.google.com/file/d/1B2kJeINymhewoxAiS5i3SFUfK1yDuCzv/view?usp=sharing" },
   { label: "Medical Clearance", link: "https://drive.google.com/file/d/1r8ve-iGAcZ9L82ssFa7nGMglyhuICYCz/view?usp=sharing" },
   { label: "Consent Form", link: "https://drive.google.com/file/d/1aMIHbPGKMvMtbVRf3ICEsELl1uVMZiF0/view?usp=sharing" },
-  { label: "Certificate Of Registration", link: "https://drive.google.com/file/d/1aMIHbPGKMvMtbVRf3ICEsELl1uVMZiF0/view?usp=sharing" },
+  { label: "Certificate Of Registration", link: "https://drive.google.com/file/d/1S17R_Jyj70Ssv4j17TNPq0ylORJmaETn/view?usp=sharing" },
   { label: "Daily Time Records", link: "https://drive.google.com/file/d/1i3iMjgSEa5CAVIDRXV0SJzJf02qxBHBL/view?usp=sharing" },
 ];
 
