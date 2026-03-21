@@ -7,10 +7,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const featuredVideos = [
     {
+      id: "youtube-video-resume-section",
       title: "YouTube Video Resume",
       videoId: profile.ytVideoId,
     },
     {
+      id: "accomplishment-report-video-section",
       title: "Accomplishment Report Video",
       videoId: "dV1SpHeG6xI",
     },
@@ -23,7 +25,7 @@ export default function Footer() {
       {/* Videos Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {featuredVideos.map((video, index) => (
-          <div key={`video-${index}`} className={cardClass}>
+          <div id={video.id} key={`video-${index}`} className={`${cardClass} scroll-mt-24`}>
             <h2 className="text-xl font-bold mb-3">{video.title}</h2>
             <div className="rounded-lg overflow-hidden aspect-video bg-black">
               <iframe
@@ -41,7 +43,7 @@ export default function Footer() {
       </div>
 
       {/* Social Media & Contact Info */}
-      <div className={cardClass}>
+      <div id="contacts-section" className={`${cardClass} scroll-mt-24`}>
         <h2 className="text-xl font-bold mb-3">Connect With Me</h2>
         <div className="space-y-5 mt-4">
           <div>

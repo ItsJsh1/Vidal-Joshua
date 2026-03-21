@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../context/ThemeContext";
 import { profile, certifications } from "../context/data/portfolioData";
-import { Moon, Sun, MapPin, Laptop, BadgeCheck, Mail, Award, Download, ExternalLink } from "lucide-react";
+import { Moon, Sun, MapPin, Laptop, BadgeCheck, Mail, Award, Download, ExternalLink, Info } from "lucide-react";
 
 export default function Header() {
   const { isDark, toggleDark } = useTheme();
@@ -102,7 +102,7 @@ export default function Header() {
       <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
         
         {/* Left: Profile pic + info */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full flex-1 min-w-0">
           {/* Profile Picture */}
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-gray-400 flex-shrink-0">
             <img
@@ -146,7 +146,7 @@ export default function Header() {
               <p className="text-xs sm:text-sm opacity-70">{profile.school}</p>
             </div>
 
-            {/* Action buttons + total hours */}
+            {/* Action buttons */}
             <div className="mt-3 w-full flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-2">
               {/* Email Me button */}
               <a
@@ -178,24 +178,36 @@ export default function Header() {
                 <span className="relative">Download Report</span>
               </a>
 
-              <div
-                className={`whitespace-nowrap ml-0 sm:ml-auto text-[10px] sm:text-xs font-semibold px-2 py-1 rounded-md border ${
-                  isDark ? "bg-gray-700 border-gray-600 text-gray-100" : "bg-gray-100 border-gray-200 text-gray-700"
-                }`}
-              >
-                Hours: {profile.totalHours}
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Right: Dark mode toggle */}
-        <button
-          onClick={toggleDark}
-          className="absolute top-4 right-4 sm:relative sm:top-0 sm:right-0 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-        >
-          {isDark ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
+        {/* Right: Info + Dark mode toggle */}
+        <div className="w-full sm:w-auto flex justify-end self-end sm:self-start items-center gap-2 shrink-0">
+          <div className={`whitespace-nowrap text-[10px] sm:text-xs font-semibold ${isDark ? "text-gray-100" : "text-gray-700"}`}>
+            Hours: {profile.totalHours}
+          </div>
+
+          <div className="relative group">
+            <button
+              type="button"
+              aria-label="Tech stack information"
+              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+            >
+              <Info size={20} />
+            </button>
+            <div className={`absolute right-0 top-full mt-2 px-2 py-1 text-[11px] sm:text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${isDark ? "bg-gray-700 text-white" : "bg-gray-900 text-white"}`}>
+              This portfolio is made using ReactJS.
+            </div>
+          </div>
+
+          <button
+            onClick={toggleDark}
+            className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
 
       </div>
 

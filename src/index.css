@@ -71,6 +71,15 @@
   animation: pump 1.5s ease-in-out infinite;
 }
 
+.section-focus-zoom {
+  border-radius: 0.75rem;
+  outline: 3px solid rgba(59, 130, 246, 0.95);
+  outline-offset: 2px;
+  transform: scale(1.012);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.16);
+  transition: transform 220ms ease, box-shadow 220ms ease, outline-color 220ms ease;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

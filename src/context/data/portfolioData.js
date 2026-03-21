@@ -285,6 +285,13 @@ export const driveAttachments = [
   { label: "Daily Time Records", link: "https://drive.google.com/file/d/1i3iMjgSEa5CAVIDRXV0SJzJf02qxBHBL/view?usp=sharing" },
 ];
 
+export const practicumActivities = [
+  { label: "Learning Activity 1", link: "https://drive.google.com/file/d/1bT0C9OiM3CfzttGeNlntCmZP1Gs1vLou/view?usp=sharing" },
+  { label: "Learning Activity 2", link: "https://drive.google.com/file/d/1DjmLi3v_fJHfoVeb8zj2lMWpSVt1ktcL/view?usp=sharing" },
+  { label: "Learning Activity 3", link: "https://drive.google.com/file/d/1lM2dK9ftu6pk57XmUMy7KglL42f7wDpB/view?usp=sharing" },
+  { label: "Next Activity | Pending ", link: "#" },
+];
+
 export const socialMedia = [
   { platform: "Facebook", username: "Joshua", url: "https://www.facebook.com/joshua.vidal.9619/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" },
   { platform: "Instagram", username: "Joshua", url: "https://www.instagram.com/http.vjsh_/", icon: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" },
