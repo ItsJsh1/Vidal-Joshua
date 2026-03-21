@@ -47,9 +47,9 @@ export const profile = {
   school: "Polytechnic University of the Philippines - Taguig Campus",
   schoolLogo: schoolLogo,
   email: "joshuavidalpupstudent@gmail.com",
-  totalHours: "152",
+  totalHours: "172",
   profilePic: profilePic,
-  ytVideoId: "your-youtube-video-id",
+  ytVideoId:"dV1SpHeG6xI",
 };
 
 export const certifications = [
