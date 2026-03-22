@@ -1,76 +1,46 @@
 import { useTheme } from "../context/ThemeContext";
 import { driveAttachments } from "../context/data/portfolioData";
-import { FileText } from "lucide-react";
-
-// Helper function to extract Google Drive file ID from various URL formats
-function getGDriveFileId(url) {
-  if (!url || url === "#") return null;
-  // Match /d/FILE_ID/ or id=FILE_ID
-  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/);
-  return match ? match[1] : null;
-}
-
-// Get thumbnail URL for Google Drive file
-function getGDriveThumbnail(url) {
-  const fileId = getGDriveFileId(url);
-  if (!fileId) return null;
-  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
-}
+import { ExternalLink, FileText } from "lucide-react";
 
 export default function DriveAttachments() {
   const { isDark } = useTheme();
 
   return (
-    <div>
-      {/* Section Title */}
-      <h2 className="text-2xl font-bold mb-4">PUP-T On the Job Training Requirements</h2>
-      
-      {/* Responsive grid: 2 cols on mobile, 3 on sm, 4 on md, 5 on lg */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      {driveAttachments.map((file, index) => {
-        const thumbnail = getGDriveThumbnail(file.link);
-        
-        return (
+    <div className={`rounded-xl p-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)] transition-all duration-300 ${isDark ? "bg-gray-800" : "bg-white"}`}>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <div>
+          <h2 className="text-xl font-bold">PUP-T On the Job Training Requirements</h2>
+          <p className="text-xs opacity-70 mt-1">Official OJT documents and required submissions.</p>
+        </div>
+        <div className={`text-[10px] sm:text-xs font-semibold px-2 py-1 border ${isDark ? "border-gray-600 text-gray-200 bg-gray-700" : "border-gray-300 text-gray-700 bg-gray-100"}`}>
+          Total: {driveAttachments.length}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {driveAttachments.map((file, index) => (
           <a
             key={index}
             href={file.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group rounded-xl overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)] flex flex-col transition-all duration-300 border-b-4 border-transparent hover:border-blue-500 ${
-              isDark ? "bg-gray-800" : "bg-white"
+            className={`group rounded-lg p-3 border transition-all duration-200 hover:scale-[1.02] ${
+              isDark
+                ? "bg-gray-700 border-gray-600 hover:border-blue-400"
+                : "bg-gray-50 border-gray-200 hover:border-blue-500"
             }`}
           >
-            {/* Preview thumbnail area */}
-            <div className={`aspect-[4/3] flex items-center justify-center overflow-hidden ${
-              isDark ? "bg-gray-700" : "bg-gray-100"
-            }`}>
-              {thumbnail ? (
-                <img 
-                  src={thumbnail} 
-                  alt={file.label}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-              ) : null}
-              <div 
-                className={`${thumbnail ? 'hidden' : 'flex'} items-center justify-center w-full h-full`}
-              >
-                <FileText className="opacity-40" size={32} />
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-start gap-2 min-w-0">
+                <FileText size={16} className="opacity-70 flex-shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <span className="text-sm font-semibold leading-tight block line-clamp-2">{file.label}</span>
+                </div>
               </div>
-            </div>
-            
-            {/* Label area */}
-            <div className="p-3">
-              <span className="font-semibold text-xs leading-tight line-clamp-2 block">
-                {file.label}
-              </span>
+              <ExternalLink size={15} className="opacity-60 group-hover:opacity-100 flex-shrink-0" />
             </div>
           </a>
-        );
-      })}
+        ))}
       </div>
     </div>
   );

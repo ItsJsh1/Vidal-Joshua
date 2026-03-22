@@ -276,6 +276,7 @@ export const driveAttachments = [
   { label: "Memorandum of Agreement", link: "https://drive.google.com/file/d/1QveZczYXsn2grriDw1zMtEUK_yhTWCKn/view?usp=sharing" },
   { label: "Information Sheet of Training Partner", link: "https://drive.google.com/file/d/1VgaQgFjEHQ17h9sRu-qg_WZnFnWnvtjG/view?usp=sharing" },
   { label: "Student Information Sheet", link: "https://drive.google.com/file/d/1UBbJbKTakIMKkjwQcmp2U4uV2rxgEvwy/view?usp=sharing" },
+  { label: "PUPSIS", link: "https://drive.google.com/file/d/1qe4u46FunbL_EXArelDBnGFjjKOiTpra/view?usp=sharing" },
   { label: "Good Moral", link: "https://drive.google.com/file/d/1l7t2_fgQHsLN9tXWJ0qP4XhEHhFPhNjj/view?usp=sharing" },
   { label: "Accomplishment Report", link: "https://docs.google.com/document/d/1YzfGcoevMv27C-_J3wGTapfyF0ez67j1/edit?usp=sharing&ouid=112144033677438935308&rtpof=true&sd=true" },
   { label: "Application Report", link: "https://drive.google.com/file/d/1B2kJeINymhewoxAiS5i3SFUfK1yDuCzv/view?usp=sharing" },
