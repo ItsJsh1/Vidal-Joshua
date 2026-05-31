@@ -4,6 +4,13 @@ import gallery2 from "../../asset/gallery/gallery2.jpeg";
 import gallery3 from "../../asset/gallery/gallery3.jpeg";
 import gallery4 from "../../asset/gallery/gallery4.jpeg";
 import gallery5 from "../../asset/gallery/gallery5.jpeg";
+import gallery6 from "../../asset/gallery/gallery6.jpeg";
+import gallery7 from "../../asset/gallery/gallery7.jpeg";
+import gallery8 from "../../asset/gallery/gallery8.jpeg";
+import gallery9 from "../../asset/gallery/gallery9.jpeg";
+import gallery10 from "../../asset/gallery/gallery10.jpeg";
+import gallery11 from "../../asset/gallery/gallery11.jpeg";
+import gallery12 from "../../asset/gallery/gallery12.jpeg";
 
 // Project images - MIMS
 import mims2 from "../../asset/mims2.jpeg";
@@ -47,9 +54,11 @@ export const profile = {
   school: "Polytechnic University of the Philippines - Taguig Campus",
   schoolLogo: schoolLogo,
   email: "joshuavidalpupstudent@gmail.com",
-  totalHours: "172",
+  ojtStatus: "Completed",
+  totalHours: "503",
+  totalHoursAsOf: "May 26, 2026",
   profilePic: profilePic,
-  ytVideoId:"dV1SpHeG6xI",
+  ytVideoId:"3VRCNWjZWQg",
 };
 
 export const certifications = [
@@ -64,9 +73,9 @@ export const experiences = [
   {
     title: "IT Support & Helpdesk",
     company: "Department of Trade and Industries (DTI)",
-    date: "2026 - Present",
+    date: "2026 - 2026",
     description: "What you did here.",
-    link: "https://www.dti.gov.ph", // Add your work link here
+    link: "https://www.dti.gov.ph",
   },
 
   {
@@ -74,7 +83,7 @@ export const experiences = [
     company: "Radio Engineering Circle Inc. (RECInc.)",
     date: "2025 - 2026",
     description: "What you did here.",
-    link: "https://beta.rec.org.ph", // Add your work link here
+    link: "https://beta.rec.org.ph",
   },
 
   {
@@ -82,7 +91,7 @@ export const experiences = [
     company: "US Title Search Network",
     date: "2023 - 2026",
     description: "What you did here.",
-    link: "https://www.ustitlesearch.net", // Add your work link here
+    link: "https://www.ustitlesearch.net",
   },
 
   {
@@ -90,15 +99,98 @@ export const experiences = [
     company: "Georgetown County Records",
     date: "2023 - 2026",
     description: "What you did here.",
-    link: "https://www.georgetowndeeds.com", // Add your work link here
+    link: "https://www.georgetowndeeds.com",
+  },
+
+  {
+    title: "First Hello World!",
+    company: "Polytechnic University of the Philippines - Taguig Campus",
+    date: "2022 - 2026",
+    description: "What you did here.",
+    link: "https://www.pup.edu.ph",
   },
 ];
 
 export const accomplishments = [
   {
+    activity: "Holiday | Semana Santa",
+    date: "Day // 35 | 8:00 AM - 5:00 PM",
+    description: "Holiday | Semana Santa.",
+  },
+  {
+    activity: "Holiday | Semana Santa",
+    date: "Day // 34 | 8:00 AM - 5:00 PM",
+    description: "Holiday | Semana Santa.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 33 | 8:00 AM - 5:00 PM",
+    description: "Supported network restoration and installed/configured HP Smart Tank printers for directors. Resolved printer connectivity issues.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 32 | 8:00 AM - 5:00 PM",
+    description: "Troubleshot and restored network connectivity for Building 361 employees. Provided support for EPSON and HP Smart Tank printers.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 31 | 8:00 AM - 5:00 PM",
+    description: "Conducted a server room inspection and disabled CCTV indicator lights. Assisted employees with network connectivity and printer issues.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 30 | 8:00 AM - 5:00 PM",
+    description: "Enhanced the system login UI, implemented new features, fixed bugs, documented modules, and integrated assets.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 29 | 8:00 AM - 5:00 PM",
+    description: "Provided ongoing technical support for network and printer concerns in Building 361, ensuring stable operations.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 28 | 8:00 AM - 5:00 PM",
+    description: "Supported network restoration and installed/configured HP Smart Tank printers for directors. Resolved printer connectivity issues.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 27 | 8:00 AM - 5:00 PM",
+    description: "Troubleshot and restored network connectivity for Building 361 employees. Provided support for EPSON and HP Smart Tank printers.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 26 | 8:00 AM - 5:00 PM",
+    description: "Conducted a server room inspection and disabled CCTV indicator lights. Assisted employees with network connectivity and printer issues.",
+  },
+  {
+    activity: "Holiday | Eid'l Fitr",
+    date: "Day // 25 | 8:00 AM - 5:00 PM",
+    description: "Holiday Eid'l Fitr (Feast of Ramadhan).",
+  },
+  {
+    activity: "Technical Support and Event Operations",
+    date: "Day // 24 | 8:00 AM - 5:00 PM",
+    description: "Facilitated final-day setup at DTI 361, ensuring equipment readiness, smooth flow, and documenting key moments as photographer.",
+  },
+  {
+    activity: "AV Setup and Event Technical Operations",
+    date: "Day // 23 | 8:00 AM - 5:00 PM",
+    description: "Supported final-day operations at DTI 361 by preparing the venue, ensuring equipment functionality, and serving as event photographer.",
+  },
+  {
+    activity: "Hardware Setup and Technical Support",
+    date: "Day // 22 | 8:00 AM - 5:00 PM",
+    description: "Set up audio-visual and presentation equipment at DTI 361. Ensured proper arrangement, supported activities, and documented the event.",
+  },
+  {
+    activity: "Technical Support and Event Facilitation",
+    date: "Day // 21 | 8:00 AM - 5:00 PM",
+    description: "Assisted in DTI 361 conference setup, including venue layout and audio-visual equipment. Supported event flow and handled photography.",
+  },
+  {
     activity: "Web Development",
     date: "Day // 20 | 8:00 AM - 5:00 PM",
-    description: "Assisted in planning the development of the Equipment Inventory Management System for DTI and began coding the basic system architecture and layout, ensuring a structured foundation for the project’s design and functionality.",
+    description: "Assisted in planning the development of the Equipment Inventory Management System for DTI and began coding the basic system architecture and layout, ensuring a structured foundation for the project's design and functionality.",
   },
   {
     activity: "Networking and Technical Support",
@@ -168,7 +260,7 @@ export const accomplishments = [
   {
     activity: "Hardware Assessment",
     date: "Day // 06 | 8:00 AM - 5:00 PM",
-    description: "Focused on connecting and setting up HP printers for employees, including retrieving the printer’s IP address and model, installing the appropriate HP driver for new connections, and configuring printers through the device and printer settings for laptops that already had existing drivers.",
+    description: "Focused on connecting and setting up HP printers for employees, including retrieving the printer's IP address and model, installing the appropriate HP driver for new connections, and configuring printers through the device and printer settings for laptops that already had existing drivers.",
   },
   {
     activity: "Networking Support and Hardware Assessment",
@@ -194,6 +286,192 @@ export const accomplishments = [
     activity: "System Testing",
     date: "Day // 01 | 8:00 AM - 5:00 PM",
     description: "Conducted a hands-on hardware assessment of laptop units using command-line tools and physical inspection, retrieving storage and RAM details, checking motherboard status, generating a battery health report, and examining the laptop exterior for any physical damage or wear.",
+  },
+  // --- NEW ENTRIES BELOW (Days 36–72) ---
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 36 | 8:00 AM - 5:00 PM",
+    description: "Assisted 9F HRAS employees with network connectivity restoration and resolved printer issues involving EPSON and HP Smart Tank printers.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 37 | 8:00 AM - 5:00 PM",
+    description: "Assisted 9F HRAS and 8F employees with network connectivity restoration and resolved printer issues involving EPSON, Sharp, and HP Smart Tank printers.",
+  },
+  {
+    activity: "Technical Support",
+    date: "Day // 38 | 8:00 AM - 5:00 PM",
+    description: "Went to DTI Academy with fellow OJT intern. Assisted Export Marketing Bureau (EMB) employees with printer connection and configuration.",
+  },
+  {
+    activity: "Holiday | Araw ng Kagitingan",
+    date: "Day // 39 | 8:00 AM - 5:00 PM",
+    description: "Holiday | Araw ng Kagitingan (Valor Day).",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 40 | 8:00 AM - 5:00 PM",
+    description: "Refined system module logic for proper functionality and consistency. Reviewed workflows, fixed logical gaps, restructured code, and conducted testing and validation across different scenarios.",
+  },
+  {
+    activity: "Technical Support and Event Facilitation",
+    date: "Day // 41 | 8:00 AM - 5:00 PM",
+    description: "Went to BGC with fellow OJT interns to assist during the World Bank Event Conference. Set up conference area, tested AV equipment, and provided on-site support throughout the event.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 42 | 8:00 AM - 5:00 PM",
+    description: "Resolved HP Smart Tank 615 printer connection issue for the Assistant Director and reconnected an employee to the DTI Enterprise network.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 43 | 8:00 AM - 5:00 PM",
+    description: "Assisted 9F HRAS with HP Smart Tank 615 printer issue, 16F EMB with MacBook printer connectivity and Outlook concerns, and 15F OSEC Office with enterprise network connectivity.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 44 | 8:00 AM - 5:00 PM",
+    description: "Resolved printer issues on the 8th floor, performed laptop domain setup and printer connection at 7F BMDPO, fixed HP Smart Tank and LaserJet issues at 9F HRAS, and handled laptop setup and software installation in the Tech Room.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 45 | 8:00 AM - 5:00 PM",
+    description: "Continued web development work on the Equipment Inventory Management System.",
+  },
+  {
+    activity: "Networking",
+    date: "Day // 46 | 8:00 AM - 5:00 PM",
+    description: "Assisted 11F STMPO with Fortinet client connectivity issues, 12F with enterprise network concerns, and 8F CIS Office with Adobe Creative Cloud inaccessibility.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 47 | 8:00 AM - 5:00 PM",
+    description: "Configured three Sharp printers for BPS Office. Resolved internet connectivity at 3F USEC and assisted 2F LS Office with printer setup, software installation, data backup, and user account creation.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 48 | 8:00 AM - 5:00 PM",
+    description: "Assisted HRAS with Adobe CC installation, LS Office with enterprise internet issues, PBS Office with HP Smart Tank 615 setup, FTEB Office with GIP employee network issues, and COA Office with Outlook connectivity.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 49 | 8:00 AM - 5:00 PM",
+    description: "Assisted HRAS with Adobe CC installation, supported Sir Oyo in resolving a server data outlet connectivity issue, and helped with printer cleaning and maintenance inside the Tech Room.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 50 | 8:00 AM - 5:00 PM",
+    description: "Updated system modules, fixed bugs, conducted a meeting to discuss design improvements, and performed quality testing to ensure security and stable functionality.",
+  },
+  {
+    activity: "Technical Support",
+    date: "Day // 51 | 8:00 AM - 5:00 PM",
+    description: "Performed laptop domain setup and printer connection at BPRS Office. Resolved HP Smart Tank and HP LaserJet printer connectivity issues at LS Office.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 52 | 8:00 AM - 5:00 PM",
+    description: "Assisted CARP Office with enterprise internet connectivity and resolved HP Smart Tank printer issues at the ECB Office.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 53 | 8:00 AM - 5:00 PM",
+    description: "Assisted BPRS Office with enterprise internet connectivity and resolved HP Smart Tank and HP LaserJet printer issues at LS Office.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 54 | 8:00 AM - 5:00 PM",
+    description: "Assisted STMPO Office with enterprise internet connectivity and resolved HP Smart Tank printer issues at EMB Office.",
+  },
+  {
+    activity: "Holiday | Labor Day",
+    date: "Day // 55 | 8:00 AM - 5:00 PM",
+    description: "Holiday | Labor Day.",
+  },
+  {
+    activity: "Absent",
+    date: "Day // 56 | 8:00 AM - 5:00 PM",
+    description: "Absent — Passing of Requirements for LANI Scholarship.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 57 | 8:00 AM - 5:00 PM",
+    description: "Independently assisted 9F HRAS Office with connection and configuration of HP Smart Tank 615 printers.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 58 | 8:00 AM - 5:00 PM",
+    description: "Continued EIMS development with approval from supervisors. Implemented new features for upcoming preventive maintenance processes and addressed existing system errors and bugs.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 59 | 8:00 AM - 5:00 PM",
+    description: "Enhanced existing EIMS modules, optimized workflows, implemented preventive maintenance functionalities, performed debugging and testing to ensure stability and security.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 60 | 8:00 AM - 5:00 PM",
+    description: "Conducted face-to-face meeting with fellow OJT developers to finalize EIMS features, prepare documentation, and plan presentation materials for DTI. Continued EQUIMA development with functional, UI, and logic testing.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 61 | 8:00 AM - 5:00 PM",
+    description: "Continued EQUIMA development with functional, UI, and logic testing. Practiced CI/CD workflows using GitHub and held sprint discussions to improve development approach and productivity.",
+  },
+  {
+    activity: "Absent",
+    date: "Day // 62 | 8:00 AM - 5:00 PM",
+    description: "Absent.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 63 | 8:00 AM - 5:00 PM",
+    description: "Implemented revisions recommended by Sir Raymond from ISD Division. Fixed additional bugs, resolved irregularities across main modules, and conducted sprint meetings to discuss development strategies.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 64 | 8:00 AM - 5:00 PM",
+    description: "Fixed bugs, implemented new features to enhance usability, resolved GitHub merge conflicts, and held sprint meetings to align development strategies and maintain code quality.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 65 | 8:00 AM - 5:00 PM",
+    description: "Conducted online meeting with EQUIMA developers to align tasks with user requirements. Performed further debugging and addressed CI/CD-related concerns.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 66 | 8:00 AM - 5:00 PM",
+    description: "Continued development with ASD Division, focusing on system testing and Docker implementation. Successfully integrated Docker and prepared server requirements for DTI Enterprise network access.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 67 | 8:00 AM - 5:00 PM",
+    description: "Successfully deployed the system to the DTI Server. DTI Administrators reserved a dedicated IP for ISMS access. Conducted user testing in the production environment to identify remaining bugs.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 68 | 8:00 AM - 5:00 PM",
+    description: "Performed continuous testing on the production environment while implementing user-requested revisions. Conducted frontend and backend testing and immediately resolved detected issues.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 69 | 8:00 AM - 5:00 PM",
+    description: "Continued production testing and implementing user-requested revisions. Monitored system performance, validated data processing, and coordinated with the development team on newly implemented features.",
+  },
+  {
+    activity: "Programming",
+    date: "Day // 70 | 8:00 AM - 5:00 PM",
+    description: "Conducted team meeting to discuss production environment issues and identify solutions for bugs and performance concerns. Coordinated task assignments to complete pending enhancements before internship end.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 71 | 8:00 AM - 5:00 PM",
+    description: "Assisted HRAS Office with printer connectivity on IP switch ports. Also assisted STMPO with enterprise network connectivity issues.",
+  },
+  {
+    activity: "Technical Support and Networking",
+    date: "Day // 72 | 8:00 AM - 5:00 PM",
+    description: "Assisted FTSC and HRAS Offices with printer connection and scanning issues. Also assisted CIG, STMPO, and HRAS with enterprise network connectivity issues.",
   },
 ];
 
@@ -279,11 +557,11 @@ export const driveAttachments = [
   { label: "PUPSIS", link: "https://drive.google.com/file/d/1qe4u46FunbL_EXArelDBnGFjjKOiTpra/view?usp=sharing" },
   { label: "Good Moral", link: "https://drive.google.com/file/d/1l7t2_fgQHsLN9tXWJ0qP4XhEHhFPhNjj/view?usp=sharing" },
   { label: "Accomplishment Report", link: "https://docs.google.com/document/d/1YzfGcoevMv27C-_J3wGTapfyF0ez67j1/edit?usp=sharing&ouid=112144033677438935308&rtpof=true&sd=true" },
-  { label: "Application Report", link: "https://drive.google.com/file/d/1B2kJeINymhewoxAiS5i3SFUfK1yDuCzv/view?usp=sharing" },
+  { label: "Application Form", link: "https://drive.google.com/file/d/1B2kJeINymhewoxAiS5i3SFUfK1yDuCzv/view?usp=sharing" },
   { label: "Medical Clearance", link: "https://drive.google.com/file/d/1r8ve-iGAcZ9L82ssFa7nGMglyhuICYCz/view?usp=sharing" },
   { label: "Consent Form", link: "https://drive.google.com/file/d/1aMIHbPGKMvMtbVRf3ICEsELl1uVMZiF0/view?usp=sharing" },
   { label: "Certificate Of Registration", link: "https://drive.google.com/file/d/1S17R_Jyj70Ssv4j17TNPq0ylORJmaETn/view?usp=sharing" },
-  { label: "Daily Time Records", link: "https://drive.google.com/file/d/1i3iMjgSEa5CAVIDRXV0SJzJf02qxBHBL/view?usp=sharing" },
+  { label: "Daily Time Records", link: "https://drive.google.com/drive/folders/1Do0kYwncQ-cM0KywEjnccTb2l0ypqCId?usp=sharing" },
 ];
 
 export const practicumActivities = [
@@ -306,11 +584,22 @@ export const socialMedia = [
 
 export const contactInfo = [
   { label: "Gmail", value: "joshuavidalpupstudent@gmail.com", url: "mailto:joshuavidalpupstudent@gmail.com", icon: "https://cdn-icons-png.flaticon.com/512/281/281769.png" },
-  { label: "Phone", value: "+63 961 702 9780", url: "tel:+639617029780", icon: "https://cdn-icons-png.flaticon.com/512/724/724664.png" },
+  { label: "Phone", value: "+63 924 204 8369", url: "tel:+639617029780", icon: "https://cdn-icons-png.flaticon.com/512/724/724664.png" },
   { label: "Address", value: "#26 Rd. 5 Acacia St. North Daan Hari, Taguig City, Metro Manila", url: "https://maps.app.goo.gl/Bk3jovpmPBGtuAM46", icon: "https://cdn-icons-png.flaticon.com/512/684/684908.png" },
   { label: "Telegram", value: "@joshuavidal", url: "https://t.me/joshuavidal", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png" },
 ];
 
 export const galleryImages = [
-  gallery1,gallery2,gallery3,gallery4,gallery5
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery12,
 ];

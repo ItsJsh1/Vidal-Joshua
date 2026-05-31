@@ -99,116 +99,140 @@ export default function Header() {
 
   return (
     <div className={cardClass}>
-      <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
-        
-        {/* Left: Profile pic + info */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full flex-1 min-w-0">
-          {/* Profile Picture */}
+      <div className="grid grid-cols-1 md:grid-cols-[auto,1fr,auto] gap-4 items-start">
+        {/* Avatar */}
+        <div className="flex justify-center md:justify-start">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-gray-400 flex-shrink-0">
             <img
               src={profile.profilePic}
               alt="Profile"
               className="w-full h-full object-cover"
-              // If image fails to load, show initials area
-              onError={(e) => { e.target.style.display = 'none'; }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
             />
           </div>
+        </div>
 
-          {/* Name, location, roles */}
-          <div className="text-center sm:text-left">
-            <h1 className="text-xl sm:text-2xl font-bold flex items-center justify-center sm:justify-start gap-2">
-              {profile.name}
-              <BadgeCheck size={20} className="text-blue-500" fill="currentColor" stroke="white" />
-            </h1>
-            <p className="text-sm opacity-70 flex items-center justify-center sm:justify-start gap-1">
-              <MapPin size={14} />
-              {profile.location}
-            </p>
-            {/* 
-              .join(" | ") turns ["Software Developer", "FullStack Developer"]
-              into "Software Developer | FullStack Developer"
-            */}
-            <p className="text-xs sm:text-sm opacity-70 flex items-center justify-center sm:justify-start gap-1">
-              <Laptop size={14} />
-              {profile.roles.join(" | ")}
-            </p>
+        {/* Main info */}
+        <div className="min-w-0 text-center md:text-left">
+          <h1 className="text-xl sm:text-2xl font-bold flex items-center justify-center md:justify-start gap-2">
+            {profile.name}
+            <BadgeCheck size={20} className="text-blue-500" fill="currentColor" stroke="white" />
+          </h1>
 
-            {/* School */}
-            <div className="flex items-center justify-center sm:justify-start gap-2 mt-1">
-              <div className="w-5 h-5 rounded overflow-hidden flex-shrink-0">
-                <img
-                  src={profile.schoolLogo}
-                  alt="School"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '<span class="w-full h-full flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>'; }}
-                />
-              </div>
-              <p className="text-xs sm:text-sm opacity-70">{profile.school}</p>
+          {profile.ojtStatus === "Completed" && (
+            <div className="mt-1 flex justify-center md:justify-start">
+              <span
+                className={`inline-flex items-center whitespace-nowrap text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full ${
+                  isDark ? "bg-green-500/20 text-green-300" : "bg-green-100 text-green-700"
+                }`}
+              >
+                OJT Completed
+              </span>
             </div>
+          )}
 
-            {/* Action buttons */}
-            <div className="mt-3 w-full flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-2">
-              {/* Email Me button */}
-              <a
-                href={`mailto:${profile.email}`}
-                className="flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition animate-pump"
-              >
-                <Mail size={14} />
-                Email Me
-              </a>
+          <p className="text-sm opacity-70 flex items-center justify-center md:justify-start gap-1">
+            <MapPin size={14} />
+            <span className="truncate">{profile.location}</span>
+          </p>
 
-              {/* Certifications button */}
-              <button 
-                onClick={openModal}
-                className="flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition"
-              >
-                <Award size={14} />
-                Certifications
-              </button>
+          <p className="text-xs sm:text-sm opacity-70 flex items-start justify-center md:justify-start gap-1">
+            <Laptop size={14} className="mt-0.5 sm:mt-0" />
+            <span className="break-words">{profile.roles.join(" | ")}</span>
+          </p>
 
-              {/* Download Accomplishment Report button */}
-              <a 
-                href="https://docs.google.com/document/d/1YzfGcoevMv27C-_J3wGTapfyF0ez67j1/edit?usp=sharing&ouid=112144033677438935308&rtpof=true&sd=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative overflow-hidden flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition"
-              >
-                <span className="absolute inset-0 animate-shine"></span>
-                <Download size={14} className="relative" />
-                <span className="relative">Download Report</span>
-              </a>
-
+          {/* School */}
+          <div className="flex items-center justify-center md:justify-start gap-2 mt-1">
+            <div className="w-5 h-5 rounded overflow-hidden flex-shrink-0">
+              <img
+                src={profile.schoolLogo}
+                alt="School"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '<span class="w-full h-full flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>';
+                }}
+              />
             </div>
+            <p className="text-xs sm:text-sm opacity-70">{profile.school}</p>
+          </div>
+
+          {/* Action buttons */}
+          <div className="mt-3 w-full flex flex-wrap sm:flex-nowrap items-center justify-center md:justify-start gap-2">
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition animate-pump"
+            >
+              <Mail size={14} />
+              Email Me
+            </a>
+
+            <button
+              onClick={openModal}
+              className="flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition"
+            >
+              <Award size={14} />
+              Certifications
+            </button>
+
+            <a
+              href="https://drive.google.com/drive/folders/19oodJCuaDOZAM45EixGCKd8Ee2S63MiP?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden flex items-center gap-1.5 bg-gray-50 text-gray-900 font-semibold text-xs sm:text-sm px-3 py-1.5 shadow-[4px_0_8px_-2px_rgba(0,0,0,0.2)] hover:bg-blue-500 hover:text-white transition"
+            >
+              <span className="absolute inset-0 animate-shine"></span>
+              <Download size={14} className="relative" />
+              <span className="relative">Download Report</span>
+            </a>
           </div>
         </div>
 
-        {/* Right: Info + Dark mode toggle */}
-        <div className="w-full sm:w-auto flex justify-end self-end sm:self-start items-center gap-2 shrink-0">
-          <div className={`whitespace-nowrap text-[10px] sm:text-xs font-semibold ${isDark ? "text-gray-100" : "text-gray-700"}`}>
-            Hours: {profile.totalHours}
-          </div>
+        {/* Stats + controls */}
+        <div className="flex justify-center md:justify-end">
+          <div className="flex items-center gap-2 flex-wrap md:flex-nowrap justify-center md:justify-end">
+            <div className="relative group">
+              <div
+                className={`whitespace-nowrap text-[10px] sm:text-xs font-semibold ${isDark ? "text-gray-100" : "text-gray-700"}`}
+              >
+                Hours: {profile.totalHours}
+              </div>
+              <div
+                className={`absolute right-0 top-full mt-2 px-2 py-1 text-[11px] sm:text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+                  isDark ? "bg-gray-700 text-white" : "bg-gray-900 text-white"
+                }`}
+              >
+                This is the total hours as of {profile.totalHoursAsOf ?? "May 26, 2026"}.
+              </div>
+            </div>
 
-          <div className="relative group">
+            <div className="relative group">
+              <button
+                type="button"
+                aria-label="Tech stack information"
+                className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              >
+                <Info size={20} />
+              </button>
+              <div
+                className={`absolute right-0 top-full mt-2 px-2 py-1 text-[11px] sm:text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+                  isDark ? "bg-gray-700 text-white" : "bg-gray-900 text-white"
+                }`}
+              >
+                This portfolio is made using ReactJS.
+              </div>
+            </div>
+
             <button
-              type="button"
-              aria-label="Tech stack information"
+              onClick={toggleDark}
               className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
             >
-              <Info size={20} />
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <div className={`absolute right-0 top-full mt-2 px-2 py-1 text-[11px] sm:text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${isDark ? "bg-gray-700 text-white" : "bg-gray-900 text-white"}`}>
-              This portfolio is made using ReactJS.
-            </div>
           </div>
-
-          <button
-            onClick={toggleDark}
-            className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-          >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </div>
-
       </div>
 
       {/* Certifications Modal */}

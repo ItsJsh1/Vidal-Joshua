@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../context/ThemeContext";
 import { galleryImages } from "../context/data/portfolioData";
@@ -11,6 +11,8 @@ export default function CarouselGallery() {
   // currentIndex is the value, setCurrentIndex is the function to change it
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const thumbnailsRef = useRef(null);
 
   const prev = () => {
     // If we're at the start, wrap to the end. Otherwise go back one.
@@ -23,12 +25,18 @@ export default function CarouselGallery() {
 
   const openModal = (index) => {
     setCurrentIndex(index);
+    setZoomLevel(1);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
+    setZoomLevel(1);
     setIsModalOpen(false);
   };
+
+  const zoomIn = () => setZoomLevel((z) => Math.min(z + 0.25, 3));
+  const zoomOut = () => setZoomLevel((z) => Math.max(z - 0.25, 1));
+  const toggleZoom = () => setZoomLevel((z) => (z > 1 ? 1 : 2));
 
   // Lock body scroll when modal is open and handle keyboard navigation
   useEffect(() => {
@@ -39,6 +47,8 @@ export default function CarouselGallery() {
         if (e.key === 'Escape') closeModal();
         if (e.key === 'ArrowLeft') prev();
         if (e.key === 'ArrowRight') next();
+        if (e.key === '+' || e.key === '=') zoomIn();
+        if (e.key === '-') zoomOut();
       };
       
       window.addEventListener('keydown', handleKeyDown);
@@ -48,6 +58,24 @@ export default function CarouselGallery() {
       };
     }
   }, [isModalOpen]);
+
+  useEffect(() => {
+    setZoomLevel(1);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    const container = thumbnailsRef.current;
+    if (!container) return;
+
+    const activeThumbnail = container.querySelector(`[data-gallery-index="${currentIndex}"]`);
+    if (activeThumbnail) {
+      activeThumbnail.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [currentIndex]);
 
   return (
     <>
@@ -61,10 +89,11 @@ export default function CarouselGallery() {
         </button>
 
         {/* Images — shows a scrollable strip, highlights current */}
-        <div className="flex gap-2 overflow-x-auto flex-1 scrollbar-hide">
+        <div ref={thumbnailsRef} className="flex gap-2 overflow-x-auto flex-1 scrollbar-hide">
           {galleryImages.map((img, index) => (
             <div
               key={index}
+              data-gallery-index={index}
               onClick={() => openModal(index)}
               className={`flex-shrink-0 w-20 h-14 sm:w-28 sm:h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
                 index === currentIndex ? "ring-2 ring-blue-500" : "opacity-60"
@@ -112,9 +141,36 @@ export default function CarouselGallery() {
           <img 
             src={galleryImages[currentIndex]} 
             alt={`gallery-${currentIndex}`}
-            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-transform duration-200 cursor-zoom-in"
+            style={{ transform: `scale(${zoomLevel})` }}
+            onClick={(e) => { e.stopPropagation(); toggleZoom(); }}
+            onWheel={(e) => {
+              e.stopPropagation();
+              if (e.deltaY < 0) zoomIn();
+              if (e.deltaY > 0) zoomOut();
+            }}
           />
+        </div>
+
+        {/* Zoom controls */}
+        <div className="absolute top-6 left-6 flex items-center gap-2">
+          <button
+            onClick={(e) => { e.stopPropagation(); zoomOut(); }}
+            className="px-3 py-2 text-white bg-black/60 rounded-full hover:bg-black/80 transition-colors"
+            aria-label="Zoom out"
+          >
+            -
+          </button>
+          <div className="px-3 py-2 text-white bg-black/60 rounded-full text-xs font-semibold min-w-[64px] text-center">
+            {Math.round(zoomLevel * 100)}%
+          </div>
+          <button
+            onClick={(e) => { e.stopPropagation(); zoomIn(); }}
+            className="px-3 py-2 text-white bg-black/60 rounded-full hover:bg-black/80 transition-colors"
+            aria-label="Zoom in"
+          >
+            +
+          </button>
         </div>
 
         <button 

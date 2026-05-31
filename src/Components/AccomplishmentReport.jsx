@@ -1,14 +1,29 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../context/ThemeContext";
-import { accomplishments } from "../context/data/portfolioData";
+import { accomplishments, profile } from "../context/data/portfolioData";
 
 export default function AccomplishmentReport() {
   const { isDark } = useTheme();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const getDayNumber = (dateText) => {
+    if (typeof dateText !== "string") return Number.NEGATIVE_INFINITY;
+    const match = dateText.match(/Day\s*\/\/\s*(\d+)/i);
+    return match ? Number(match[1]) : Number.NEGATIVE_INFINITY;
+  };
+
+  const getWeekNumber = (dayNumber) => {
+    if (!Number.isFinite(dayNumber) || dayNumber <= 0) return 0;
+    return Math.floor((dayNumber - 1) / 5) + 1;
+  };
+
+  const sortedAccomplishments = [...accomplishments].sort(
+    (a, b) => getDayNumber(b?.date) - getDayNumber(a?.date)
+  );
+
   // Show only first 5 items in the card, all items in modal
-  const displayedAccomplishments = accomplishments.slice(0, 5);
+  const displayedAccomplishments = sortedAccomplishments.slice(0, 5);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -75,13 +90,23 @@ export default function AccomplishmentReport() {
           {/* Modal Body - Scrollable */}
           <div className="overflow-y-auto flex-1 pr-2 custom-scrollbar">
             <div className="flex flex-col gap-4">
-              {accomplishments.map((item, index) => {
+              {sortedAccomplishments.map((item, index) => {
                 // Calculate week number so Day 01-05 = Week 1, Day 06-10 = Week 2, etc.
-                const totalWeeks = Math.ceil(accomplishments.length / 5);
-                const weekNumber = totalWeeks - Math.floor(index / 5);
-                const isFirstOfWeek = index % 5 === 0;
-                const isLastOfWeek = index % 5 === 4 || index === accomplishments.length - 1;
-                const isLastItem = index === accomplishments.length - 1;
+                // This must be based on the actual day number (not index) so partial weeks (e.g., Week 15 only 2 days) render correctly.
+                const currentDay = getDayNumber(item?.date);
+                const weekNumber = getWeekNumber(currentDay);
+                const prevWeekNumber =
+                  index === 0
+                    ? null
+                    : getWeekNumber(getDayNumber(sortedAccomplishments[index - 1]?.date));
+                const nextWeekNumber =
+                  index === sortedAccomplishments.length - 1
+                    ? null
+                    : getWeekNumber(getDayNumber(sortedAccomplishments[index + 1]?.date));
+
+                const isFirstOfWeek = index === 0 || weekNumber !== prevWeekNumber;
+                const isLastOfWeek = index === sortedAccomplishments.length - 1 || weekNumber !== nextWeekNumber;
+                const isLastItem = index === sortedAccomplishments.length - 1;
 
                 return (
                   <div key={index}>
@@ -124,10 +149,10 @@ export default function AccomplishmentReport() {
           <div className="mt-4 pt-3 border-t border-gray-500/30 flex-shrink-0">
             <div className="flex justify-between items-center">
               <p className="text-xs opacity-50">
-                Total: {accomplishments.length} accomplishments
+                Total: {sortedAccomplishments.length} accomplishments
               </p>
               <p className="text-xs opacity-50">
-                Total Hours: {accomplishments.length * 8} hrs
+                Total Hours: {profile.totalHours} hrs (as of {profile.totalHoursAsOf ?? "May 26, 2026"})
               </p>
             </div>
           </div>
@@ -163,7 +188,9 @@ export default function AccomplishmentReport() {
       {/* Main Card */}
       <div className={`rounded-xl p-3 sm:p-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)] transition-all duration-300 ${isDark ? "bg-gray-800" : "bg-white"}`}>
         <div className="flex justify-between items-center mb-3">
-          <h2 className="text-lg sm:text-xl font-bold">Accomplishment Report</h2>
+          <h2 className="text-lg sm:text-xl font-bold leading-tight">
+            Accomplishment <br /> Report
+          </h2>
           <button 
             onClick={openModal}
             className={`flex items-center gap-1.5 text-xs sm:text-sm px-3 py-1.5 rounded-full font-medium transition-all duration-200 ${
@@ -198,10 +225,21 @@ export default function AccomplishmentReport() {
           ))}
         </div>
 
-        {accomplishments.length > 5 && (
-          <p className="text-[10px] sm:text-xs opacity-50 mt-3 text-center">
-            +{accomplishments.length - 5} more accomplishments
-          </p>
+        {sortedAccomplishments.length > 5 && (
+          <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-[10px] sm:text-xs opacity-50">
+              +{sortedAccomplishments.length - 5} more accomplishments
+            </p>
+            {profile.ojtStatus === "Completed" && (
+              <span
+                className={`inline-flex items-center whitespace-nowrap text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full ${
+                  isDark ? "bg-green-500/20 text-green-300" : "bg-green-100 text-green-700"
+                }`}
+              >
+                OJT Completed
+              </span>
+            )}
+          </div>
         )}
       </div>
 

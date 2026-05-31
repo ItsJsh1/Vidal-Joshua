@@ -16,6 +16,16 @@ export default function Footer() {
       title: "Accomplishment Report Video",
       videoId: "dV1SpHeG6xI",
     },
+    {
+      id: "new-featured-video-section",
+      title: "Final OJT Presentation",
+      videoId: "4MJuG4Htb0M",
+    },
+    {
+      id: "pending-ojt-presentation-video-section",
+      title: "Future Presentation Video",
+      status: "pending",
+    },
   ];
 
   return (
@@ -28,15 +38,29 @@ export default function Footer() {
           <div id={video.id} key={`video-${index}`} className={`${cardClass} scroll-mt-24`}>
             <h2 className="text-xl font-bold mb-3">{video.title}</h2>
             <div className="rounded-lg overflow-hidden aspect-video bg-black">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${video.videoId}`}
-                title={video.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {video.videoId ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${video.videoId}`}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <div
+                  className={`w-full h-full flex flex-col items-center justify-center gap-2 ${isDark ? "bg-gray-900" : "bg-gray-950"}`}
+                  role="status"
+                  aria-label="Pending video"
+                >
+                  <div className="text-sm font-semibold text-white/90">Pending video</div>
+                  <div className="text-xs text-white/70">Will be uploaded soon</div>
+                  <div className={`text-[11px] px-2 py-0.5 rounded-full ${isDark ? "bg-yellow-500/20 text-yellow-300" : "bg-yellow-400/20 text-yellow-200"}`}>
+                    Pending
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         ))}
